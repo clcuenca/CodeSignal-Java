@@ -30,8 +30,12 @@ public class Add {
 
 		while(inputCount != 0) {
 
-			parameter1 = Integer.parseInt(reader.readLine());
-			parameter2 = Integer.parseInt(reader.readLine());
+			// This is a multi-line input
+			String line = reader.readLine();
+			String[] numbers = line.trim().split("\\s+");
+
+			parameter1 = Integer.parseInt(numbers[0]);
+			parameter2 = Integer.parseInt(numbers[1]);
 
 			System.out.println(add(parameter1, parameter2));
 
