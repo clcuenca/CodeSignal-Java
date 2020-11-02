@@ -1,7 +1,7 @@
-/// CodeSignal - Intro - The Journey Begins
-/// add
+/// CodeSignal - Intro - Edge of the Ocean
+/// Adjacent Elements Product
 /// Author: Carlos L. Cuenca
-/// Date: 10/05/20
+/// Date: 11/2/2020
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,8 +29,10 @@ public class Add {
 		while(inputCount != 0) {
 
 			// This is a multi-line input
-			String line = reader.readLine();
-			String[] numbers = line.trim().split("\\s+");
+			int[] numbers = Arrays.stream(reader.readLine().trim().split(" ")
+				.mapToInt(Integer::parseInt).toArray());
+
+			System.out.println(adjacentElementsProduct(numbers));
 
 			inputCount--;
 
@@ -40,6 +42,20 @@ public class Add {
 
 	/// ------------------------
 	/// Function Implementations
+
+	int adjacentElementsProduct(int[] inputArray) {
+
+		int maximum = -999999999;
+
+		for(int index = 0; index < inputArray.length - 1; index++){
+
+			maximum = Math.max(maximum, inputArray[index] * inputArray[index + 1]);
+
+		}
+
+		return maximum;
+
+	}
 
 }
 
