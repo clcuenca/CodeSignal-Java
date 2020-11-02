@@ -1,5 +1,5 @@
 /// CodeSignal - Intro - Edge of the Ocean
-/// Adjacent Elements Product
+/// Shape Area
 /// Author: Carlos L. Cuenca
 /// Date: 11/2/2020
 
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /// --------------
 /// Driver Program
 
-public class AdjacentElementsProduct {
+public class ShapeArea {
 
 	public static void main(String[] args) throws IOException {
 
@@ -32,11 +32,9 @@ public class AdjacentElementsProduct {
 
 		while(inputCount != 0) {
 
-			// This is a multi-line input
-			int[] numbers = Arrays.stream(reader.readLine().trim().split(" "))
-				.mapToInt(Integer::parseInt).toArray();
+			int number = Integer.parseInt(reader.readLine());
 
-			System.out.println(adjacentElementsProduct(numbers));
+			System.out.println(shapeArea(number));
 
 			inputCount--;
 
@@ -47,17 +45,17 @@ public class AdjacentElementsProduct {
 	/// ------------------------
 	/// Function Implementations
 
-	public static int adjacentElementsProduct(int[] inputArray) {
+	public static int shapeArea(int n) {
 
-		int maximum = -8;
+		int area = 1;
 
-		for(int index = 0; index < inputArray.length - 1; index++){
+		for(int index = 1; index <= n; index++) {
 
-			maximum = Math.max(maximum, inputArray[index] * inputArray[index + 1]);
+			area += 4*(n - index);
 
 		}
-		
-		return maximum;
+
+		return area;
 
 	}
 
