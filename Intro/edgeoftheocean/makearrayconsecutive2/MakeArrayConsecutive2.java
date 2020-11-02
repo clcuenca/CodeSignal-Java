@@ -1,5 +1,5 @@
 /// CodeSignal - Intro - Edge of the Ocean
-/// Adjacent Elements Product
+/// Make Array Consecutive 2
 /// Author: Carlos L. Cuenca
 /// Date: 11/2/2020
 
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /// --------------
 /// Driver Program
 
-public class AdjacentElementsProduct {
+public class MakeArrayConsecutive2 {
 
 	public static void main(String[] args) throws IOException {
 
@@ -33,10 +33,10 @@ public class AdjacentElementsProduct {
 		while(inputCount != 0) {
 
 			// This is a multi-line input
-			int[] numbers = Arrays.stream(reader.readLine().trim().split(" "))
+			int[] array = Arrays.stream(reader.readLine().trim().split(" "))
 				.mapToInt(Integer::parseInt).toArray();
 
-			System.out.println(adjacentElementsProduct(numbers));
+			System.out.println(makeArrayConsecutive2(array));
 
 			inputCount--;
 
@@ -47,17 +47,19 @@ public class AdjacentElementsProduct {
 	/// ------------------------
 	/// Function Implementations
 
-	public static int adjacentElementsProduct(int[] inputArray) {
+	public static int makeArrayConsecutive2(int[] statues) {
 
-		int maximum = -999999999;
+		int steps = 0;
+        
+        Arrays.sort(statues, 0, statues.length);
 
-		for(int index = 0; index < inputArray.length - 1; index++){
+		for(int index = 1; index < statues.length; index++) {
 
-			maximum = Math.max(maximum, inputArray[index] * inputArray[index + 1]);
+			steps += statues[index] - statues[index - 1] - 1;
 
 		}
-		
-		return maximum;
+
+		return steps;
 
 	}
 

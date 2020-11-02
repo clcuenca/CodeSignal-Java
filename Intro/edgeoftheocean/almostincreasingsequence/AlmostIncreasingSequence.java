@@ -1,5 +1,5 @@
 /// CodeSignal - Intro - Edge of the Ocean
-/// Adjacent Elements Product
+/// Almost Increasing Sequence
 /// Author: Carlos L. Cuenca
 /// Date: 11/2/2020
 
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /// --------------
 /// Driver Program
 
-public class AdjacentElementsProduct {
+public class AlmostIncreasingSequence {
 
 	public static void main(String[] args) throws IOException {
 
@@ -32,11 +32,10 @@ public class AdjacentElementsProduct {
 
 		while(inputCount != 0) {
 
-			// This is a multi-line input
-			int[] numbers = Arrays.stream(reader.readLine().trim().split(" "))
+			int[] sequence = Arrays.stream(reader.readLine().trim().split(" "))
 				.mapToInt(Integer::parseInt).toArray();
 
-			System.out.println(adjacentElementsProduct(numbers));
+			System.out.println(almostIncreasingSequence(sequence));
 
 			inputCount--;
 
@@ -47,17 +46,28 @@ public class AdjacentElementsProduct {
 	/// ------------------------
 	/// Function Implementations
 
-	public static int adjacentElementsProduct(int[] inputArray) {
+	public static boolean almostIncreasingSequence(int[] sequence) {
 
-		int maximum = -999999999;
+		int count    = 0;
+		int position = 0;
 
-		for(int index = 0; index < inputArray.length - 1; index++){
+		for(int index = 0; index < sequence.length - 1; index++) {
+			
+			if(sequence[index] >= sequence[index + 1]) {
 
-			maximum = Math.max(maximum, inputArray[index] * inputArray[index + 1]);
+				count++;
+
+				position = index;
+
+			}
 
 		}
-		
-		return maximum;
+
+		boolean atBoundary = (position == 0) || position >= sequence.length - 2;
+
+		if(!atBoundary) atBoundary = sequence[position - 1] < sequence[position + 1] || sequence[position] < sequence[position + 2];
+
+		return (count <= 1) && atBoundary;
 
 	}
 
