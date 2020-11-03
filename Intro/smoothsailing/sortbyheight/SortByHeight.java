@@ -35,7 +35,15 @@ public class SortByHeight {
 
 			int[] array = Arrays.stream(reader.readLine().trim().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-			System.out.println(sortByHeight(array));
+			array = sortByHeight(array);
+
+			for(int index = 0; index < array.length; index++) {
+
+				System.out.print(String.valueOf(array[index]) + " ");
+
+			}
+
+			System.out.println(" ");
 
 			inputCount--;
 
