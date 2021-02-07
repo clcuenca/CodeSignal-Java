@@ -77,7 +77,7 @@ public class ReverseInParenthesis {
 
 	public String reverseInParenthesis(String inputString) {
 
-		final Stack  stack      = new Stack();
+		final Stack stack = new Stack();
 		String workString = inputString;
 
 		for(int index = 0; index < workString.length(); index++) {
