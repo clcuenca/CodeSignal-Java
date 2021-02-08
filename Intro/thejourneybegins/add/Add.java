@@ -1,5 +1,5 @@
 /// CodeSignal - Intro - The Journey Begins
-/// add
+/// Add
 /// Author: Carlos L. Cuenca
 /// Date: 10/05/20
 
@@ -31,7 +31,7 @@ public class Add {
 		while(inputCount != 0) {
 
 			// This is a multi-line input
-			String line = reader.readLine();
+			String   line    = reader.readLine();
 			String[] numbers = line.trim().split("\\s+");
 
 			parameter1 = Integer.parseInt(numbers[0]);

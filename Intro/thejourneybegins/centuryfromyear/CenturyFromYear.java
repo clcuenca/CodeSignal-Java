@@ -1,5 +1,5 @@
 /// CodeSignal - Intro - The Journey Begins
-/// centuryFromYear
+/// Century From Year
 /// Author: Carlos L. Cuenca
 /// Date: 10/05/20
 

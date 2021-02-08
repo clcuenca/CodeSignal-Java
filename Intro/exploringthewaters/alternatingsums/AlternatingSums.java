@@ -1,7 +1,7 @@
-/// CodeSignal - Intro - Smooth Sailing
-/// Sort By Height
+/// CodeSignal - Intro - Exploring the Waters
+/// Alternating Sums
 /// Author: Carlos L. Cuenca
-/// Date: 11/3/2020
+/// Date: 02/07/2021
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import java.util.Collections;
 /// --------------
 /// Driver Program
 
-public class SortByHeight {
+public class AlternatingSums {
 
 	public static void main(String[] args) throws IOException {
 
@@ -33,17 +33,19 @@ public class SortByHeight {
 
 		while(inputCount != 0) {
 
-			int[] array = Arrays.stream(reader.readLine().trim().split(" ")).mapToInt(Integer::parseInt).toArray();
+			// This is a multi-line input
+			String   line    = reader.readLine();
+			String[] strings = reader.readLine().trim().split("\\s+");
 
-			array = sortByHeight(array);
+			int   number  = Integer.parseInt(line);
+			int[] numbers = new int[number];
 
-			for(int index = 0; index < array.length; index++) {
+			for(int index = 0; index < number; index++)
+				numbers[index] = Integer.parseInt(strings[index]);
 
-				System.out.print(String.valueOf(array[index]) + " ");
+			int[] array = alternatingSums(numbers);
 
-			}
-
-			System.out.println(" ");
+			System.out.println(array[0] + " " + array[1]);
 
 			inputCount--;
 
@@ -54,29 +56,21 @@ public class SortByHeight {
 	/// ------------------------
 	/// Function Implementations
 
-	public static int[] sortByHeight(int[] array) {
+	public static int[] alternatingSums(int[] array) {
 
-		ArrayList<Integer> people = new ArrayList<>();
+		int[] returnArray = new int[2];
 
-		for(int index = 0; index < array.length; index++) 
-			if(array[index] != -1) people.add(array[index]);
-
-		Collections.sort(people);
-
-		int current = 0;
+		returnArray[0] = 0;
+		returnArray[1] = 0;
 
 		for(int index = 0; index < array.length; index++) {
 
-			if(array[index] != -1) {
-
-				array[index] = people.get(current).intValue();
-
-				current++;
-			}
+			if((index % 2) == 0) returnArray[0] += array[index];
+			else 				 returnArray[1] += array[index];
 
 		}
 
-		return array;
+		return returnArray;
 
 	}
 

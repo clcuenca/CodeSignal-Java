@@ -1,5 +1,5 @@
 /// CodeSignal - Intro - The Journey Begins
-/// checkPalindrome
+/// Check Palindrome
 /// Author: Carlos L. Cuenca
 /// Date: 10/05/20
 

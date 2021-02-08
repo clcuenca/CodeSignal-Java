@@ -1,4 +1,4 @@
-/// CodeSignal - Intro - SmoothSailing
+/// CodeSignal - Intro - Smooth Sailing
 /// ReverseInParenthesis
 /// Author: Carlos L. Cuenca
 /// Date: 02/07/2021

@@ -1,4 +1,4 @@
-/// CodeSignal - Intro - Edge of the Ocean
+/// CodeSignal - Intro - SmoothSailing
 /// Common Character Count
 /// Author: Carlos L. Cuenca
 /// Date: 11/2/2020

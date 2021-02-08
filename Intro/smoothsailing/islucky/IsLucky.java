@@ -1,4 +1,4 @@
-/// CodeSignal - Intro - Edge of the Ocean
+/// CodeSignal - Intro - Smooth Sailing
 /// Is Lucky
 /// Author: Carlos L. Cuenca
 /// Date: 11/3/2020
